@@ -1,12 +1,32 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import { ChakraProvider, ColorModeScript, extendTheme } from '@chakra-ui/react'
+
+import '@fontsource/poppins/800.css'
+import '@fontsource/poppins/400.css'
+
+
+const config = {
+  initialColorMode: 'light',
+  useSystemColorMode: false,
+};
+const theme = extendTheme({
+  fonts: {
+    heading: 'Poppins',
+    body: 'Poppins'
+  },
+  config
+})
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ChakraProvider theme={theme}>
+      <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+      <App />
+    </ChakraProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
