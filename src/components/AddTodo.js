@@ -3,7 +3,7 @@ import { HStack, Input, Button, useToast } from '@chakra-ui/react';
 import { nanoid } from 'nanoid';
 import { useState } from 'react';
 
-function AddTodo({ addTodo }) {
+function AddTodo({ todoList, addTodo }) {
     const toast = useToast();
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -21,7 +21,7 @@ function AddTodo({ addTodo }) {
             id: nanoid(),
             body: content
         }
-        addTodo(todo);
+        addTodo(todoList.id, todo);
         setContent('')
     }
 
@@ -29,10 +29,10 @@ function AddTodo({ addTodo }) {
 
     return (
         <form onSubmit={handleSubmit}>
-            <HStack pt="8">
+            <HStack p="8">
                 <Input
                     variant='filled'
-                    placeholder='buy another celery sprig...'
+                    placeholder={`add to ${todoList.name} list...`}
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
                 />
@@ -40,7 +40,7 @@ function AddTodo({ addTodo }) {
                     colorScheme='green'
                     px="8"
                     type="submit"
-                >more celery</Button>
+                >add celery</Button>
             </HStack>
 
         </form>
