@@ -25,7 +25,7 @@ function NewTodoList({ addTodoList }) {
         e.preventDefault();
         if (!content) {
             toast({
-                title: 'No celery :(',
+                title: 'No content',
                 status: 'error',
                 duration: 2000,
                 isClosable: true,
@@ -55,13 +55,13 @@ function NewTodoList({ addTodoList }) {
             <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
                 <ModalContent>
-                    <ModalHeader>more celery</ModalHeader>
+                    <ModalHeader>New List</ModalHeader>
                     <ModalCloseButton />
                     <form onSubmit={handleSubmit}>
                         <ModalBody>
                             <Input
                                 variant='filled'
-                                placeholder='new celery list name...'
+                                placeholder='New list name...'
                                 value={content}
                                 onChange={(e) => setContent(e.target.value)}
                             />
@@ -69,7 +69,7 @@ function NewTodoList({ addTodoList }) {
 
                         <ModalFooter>
                             <Button colorScheme='green' mr={3} type="submit" onClick={onClose}>
-                                Submit
+                                Add
                             </Button>
                         </ModalFooter>
                     </form>

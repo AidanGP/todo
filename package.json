@@ -1,8 +1,8 @@
 {
-  "name": "celery",
+  "name": "todo",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://aidangp.github.io/celery",
+  "homepage": "https://aidangp.github.io/todo",
   "dependencies": {
     "@chakra-ui/icons": "^1.1.5",
     "@chakra-ui/react": "^1.8.3",

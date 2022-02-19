@@ -140,7 +140,7 @@ function App() {
           bgClip="text"
           p="8"
         >
-          celery todo list
+          todo.
         </Heading>
         <NewTodoList addTodoList={addTodoList} />
 

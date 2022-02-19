@@ -32,7 +32,7 @@ function AddTodo({ todoList, addTodo }) {
             <HStack p="8">
                 <Input
                     variant='filled'
-                    placeholder={`add to ${todoList.name} list...`}
+                    placeholder={`Add to ${todoList.name} list...`}
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
                 />
@@ -40,7 +40,7 @@ function AddTodo({ todoList, addTodo }) {
                     colorScheme='green'
                     px="8"
                     type="submit"
-                >add celery</Button>
+                >Add Item</Button>
             </HStack>
 
         </form>

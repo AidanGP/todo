@@ -23,7 +23,7 @@ function EditTodoItem({ todoList, todo, editTodo }) {
         e.preventDefault();
         if (!content) {
             toast({
-                title: 'No celery :(',
+                title: 'No content',
                 status: 'error',
                 duration: 2000,
                 isClosable: true,
@@ -48,13 +48,13 @@ function EditTodoItem({ todoList, todo, editTodo }) {
             <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
                 <ModalContent>
-                    <ModalHeader>edit celery</ModalHeader>
+                    <ModalHeader>Edit Item</ModalHeader>
                     <ModalCloseButton />
                     <form onSubmit={handleSubmit}>
                         <ModalBody>
                             <Input
                                 variant='filled'
-                                placeholder='edit celery item...'
+                                placeholder={`Editing ${todo.body}...`}
                                 value={content}
                                 onChange={(e) => setContent(e.target.value)}
                             />
@@ -62,7 +62,7 @@ function EditTodoItem({ todoList, todo, editTodo }) {
 
                         <ModalFooter>
                             <Button colorScheme='green' mr={3} type="submit" onClick={onClose}>
-                                Submit
+                                Edit
                             </Button>
                         </ModalFooter>
                     </form>
